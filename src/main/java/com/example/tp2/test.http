@@ -1,0 +1,28 @@
+### 1. Inscription
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@gmail.com",
+  "password": "123456"
+}
+
+### 2. Connexion
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@gmail.com",
+  "password": "123456"
+}
+
+### 3. Accès sans token (doit être refusé)
+GET http://localhost:8080/api/hello
+
+### 4. Accès avec token
+GET http://localhost:8080/api/hello
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc5MjA4NTk2MSwiZXhwIjoxNzkyMDg5NTYxfQ.69k3YI2krP_oGiWP91cti89Hxa-bODtPJfR9g1sTR7168PO0d1SGM1mRPhUXZ1Xq
+
+### 5. Profil utilisateur
+GET http://localhost:8080/api/profile
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc5MjA4NTk2MSwiZXhwIjoxNzkyMDg5NTYxfQ.69k3YI2krP_oGiWP91cti89Hxa-bODtPJfR9g1sTR7168PO0d1SGM1mRPhUXZ1Xq
